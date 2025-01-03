@@ -1,9 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('TkAgg')
 
 # Load the data from the Excel file
-filepath = r'D:\MnIvIKT proekt\Virtual_Reality_in_Education_Impact.xlsx'
+filepath = r'D:\MnIvIKT_Proekt\Virtual_Reality_in_Education_Impact.xlsx'
 data = pd.read_excel(filepath)
 
 # Group data by 'Stress_Level_with_VR_Usage' and calculate the average 'Hours_of_VR_Usage_Per_Week'

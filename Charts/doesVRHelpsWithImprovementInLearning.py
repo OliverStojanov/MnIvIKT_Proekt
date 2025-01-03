@@ -1,7 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
 
-filepath = r'D:\MnIvIKT proekt\Virtual_Reality_in_Education_Impact.xlsx'
+matplotlib.use('TkAgg')
+
+filepath = r'D:\MnIvIKT_proekt\Virtual_Reality_in_Education_Impact.xlsx'
 
 data = pd.read_excel(filepath)
 pd.set_option('display.max_columns', None)
@@ -21,7 +24,7 @@ plt.pie(
     startangle=90,
     colors=['lightgreen', 'salmon']  # Optional: Adjust colors
 )
-plt.title('Impact of VR on Learning Outcomes')
+plt.title('Does VR Helps With Improvement on Learning Outcomes')
 plt.show()
 
 

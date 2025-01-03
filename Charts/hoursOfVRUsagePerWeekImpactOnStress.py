@@ -1,8 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.use('TkAgg')
 
 # Load the data from the Excel file
-filepath = r'D:\MnIvIKT proekt\Virtual_Reality_in_Education_Impact.xlsx'
+# filepath = r'D:\MnIvIKT proekt\Virtual_Reality_in_Education_Impact.xlsx'
+filepath = r'D:\MnIvIKT_Proekt\Virtual_Reality_in_Education_Impact.xlsx'
 data = pd.read_excel(filepath)
 
 # Define the bins for grouping the 'Hours_of_VR_Usage_Per_Week' column
@@ -13,7 +17,7 @@ labels = ['0-2', '2-4', '4-6', '6-8', '>8']
 data['Usage_Group'] = pd.cut(data['Hours_of_VR_Usage_Per_Week'], bins=bins, labels=labels, right=False)
 
 # Group the data by 'Usage_Group' and 'Stress_Level_with_VR_Usage' and count the number of students
-grouped_data = data.groupby(['Usage_Group', 'Stress_Level_with_VR_Usage']).size().unstack(fill_value=0)
+grouped_data = data.groupby(['Usage_Group', 'Stress_Level_with_VR_Usage'], observed='false').size().unstack(fill_value=0)
 
 # Print the grouped data (optional)
 print(grouped_data)

@@ -1,8 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
 
+matplotlib.use('TkAgg')
 # Load the data
-filepath = r'D:\MnIvIKT proekt\Virtual_Reality_in_Education_Impact.xlsx'
+filepath = r'D:\MnIvIKT_proekt\Virtual_Reality_in_Education_Impact.xlsx'
 
 data = pd.read_excel(filepath)
 
